@@ -1,0 +1,21 @@
+const objs = [
+  { id: 0, name: "Bob", age: 10 },
+  { id: 1, name: "John", age: 12 },
+  { id: 2, name: "Alice", age: 14 },
+];
+
+
+const objsById1 = objs.reduce((map, obj) => ((map[obj.id] = obj), map), {});
+objsById1 = {
+  0: { id: 0, name: "Bob", age: 10 },
+  1: { id: 1, name: "John", age: 12 },
+  2: { id: 2, name: "Alice", age: 14 },
+}
+
+const objsById = new Map(objs.map(obj => [obj.id, obj]));
+objsById  = Map(4) {
+  0 => { id: 0, name: 'Bob', age: 10 },
+  1 => { id: 1, name: 'John', age: 12 },
+  2 => { id: 2, name: 'Alice', age: 14 },
+  7 => { id: 7, name: 'Alice', age: 14 }
+}
